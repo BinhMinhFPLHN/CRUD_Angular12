@@ -1,0 +1,61 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "tenSach": "Lập trình máy tính",
+      "soLuong": "6",
+      "theLoai": "Code dao",
+      "NXB": "Ngôi sao "
+    },
+    {
+      "id": 2,
+      "tenSach": "sinh học",
+      "soLuong": "17",
+      "theLoai": "Giao khoa",
+      "NXB": "ai biết"
+    },
+    {
+      "id": 3,
+      "tenSach": "Toán học",
+      "soLuong": "19",
+      "theLoai": "Giao khoa",
+      "NXB": "Kinh kong"
+    },
+    {
+      "id": 4,
+      "tenSach": "Karate do",
+      "soLuong": "12",
+      "theLoai": "thể thao",
+      "NXB": "mmm"
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "theLoai": "Code dao"
+    },
+    {
+      "id": 2,
+      "theLoai": "Khoa học"
+    },
+    {
+      "id": 3,
+      "theLoai": "Toán Học"
+    },
+    {
+      "id": 4,
+      "theLoai": "Thuật toán"
+    },
+    {
+      "id": 5,
+      "theLoai": "Giao khoa"
+    },
+    {
+      "id": 6,
+      "theLoai": "thể thao"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

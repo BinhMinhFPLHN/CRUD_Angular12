@@ -1,0 +1,112 @@
+<ul class="nav">
+  <li class="nav-item">
+    <a type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-current="page"
+      (click)="onAdd()">Add</a>
+  </li>
+</ul>
+
+<table class="table mt 3">
+  <thead>
+    <tr>
+      <th scope="col">Id sach</th>
+      <th scope="col">Ten sach</th>
+      <th scope="col">So Luong</th>
+      <th scope="col">The Loai</th>
+      <th scope="col">NXB</th>
+      <th scope="col">Chuc Nang</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of employeeData">
+      <td>{{row.id}}</td>
+      <td>{{row.tenSach}}</td>
+      <td>{{row.soLuong}}</td>
+      <td>{{row.theLoai}}</td>
+      <td>{{row.NXB}}</td>
+      <td>
+        <button (click)="onEdit(row)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          Edit</button>
+        <button (click)="deleteDashboard(row)" class="btn btn-danger">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add_Sach</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+          <div class="mb-3">
+            <label for="exampleInputTen" class="form-label">Ten Sach</label>
+            <input type="text" formControlName="tenSach" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputSoluong" class="form-label">So Luong</label>
+            <input type="text" formControlName="soLuong" class="form-control" id="exampleInputPassword1">
+          </div>
+          <label for="exampleInputSoluong" class="form-label">The Loai</label>
+          <select class="form-select" formControlName="theLoai" aria-label="Default select example" id="cars">
+            <option *ngFor="let item of theLoai">
+              {{item.theLoai}}
+            </option>
+          </select>
+          <div class="mb-3">
+            <label for="exampleInputNxb" class="form-label">NXB</label>
+            <input type="text" formControlName="NXB" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" (click)="postDashboardDetails()" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Edit_Sach</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Ten Sach</label>
+            <input type="text" formControlName="tenSach" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">So Luong</label>
+            <input type="text" formControlName="soLuong" class="form-control" id="exampleInputPassword1">
+          </div>
+          <label for="exampleInputSoluong" class="form-label">The Loai</label>
+          <select class="form-select" formControlName="theLoai" aria-label="Default select example" id="cars">
+            <option *ngFor="let item of theLoai">
+              {{item.theLoai}}
+            </option>
+          </select>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">NXB</label>
+            <input type="text" formControlName="NXB" class="form-control" id="exampleInputPassword1">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" (click)="updateDashboard()" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
